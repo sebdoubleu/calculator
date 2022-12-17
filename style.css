@@ -1,0 +1,126 @@
+body {
+    background-image: radial-gradient(white, rgba(104, 104, 104, 0.562));
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: monospace;
+}
+.calc {
+    opacity: 0;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(88, 88, 88, 0.541);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 4fr;
+    padding: 1rem;
+    border: 2px solid black;
+    transition: opacity 0.8s ease-in;
+    margin: 2rem;
+}
+.display {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    grid-row: 1;
+}
+.screen {
+    background-color: white;
+    height: 80%;
+    width: 95%;
+    border-radius: 7px;
+    border: 2px solid black;
+    display: grid;
+    grid-template: 1fr 2fr/ 1fr;
+    text-align: right;
+    justify-content: end;
+    align-items: end;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.previous-num {
+    color:rgb(48, 48, 48);
+    grid-row-start: 1;
+    font-size: 2.2rem;
+}
+.curr-num {
+    grid-row-start: 2;
+    font-size: 3rem;
+}
+.previous-num,
+.curr-num {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.operate-display {
+    grid-row-start: 1;
+    font-size: 2.2rem;
+    grid-row-start: 1;
+    padding: 0 1rem 0 1rem;
+}
+.buttons {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.4rem;
+    grid-row: span 3;
+}
+.buttons > * {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: all 0.7s;
+}
+.reveal {
+    opacity: 1;
+}
+.buttons > *:hover {
+    background-color: #ccc;
+}
+.operators,
+.equals {
+    background-color: rgb(218, 145, 77);
+    font-weight: bold;
+}
+.clear {
+    background-color: rgb(77, 115, 218);
+    grid-column: 1 / 3;
+    font-weight: bold;
+}
+.backspace {
+    background-color: rgb(207, 207, 207);
+    font-weight: bold;
+}
+.decimal {
+    font-size: 2.5rem;
+}
+.backspace {
+    grid-column: span 2;
+}
+.created-by {
+    opacity: 0;
+    color: rgba(0, 0, 0, 0.9);
+    padding-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: opacity 2s;
+}
+a {
+    color: rgba(0, 0, 255, 0.9);
+    text-decoration: none;
+}
