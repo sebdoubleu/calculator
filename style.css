@@ -127,6 +127,6 @@ a {
 @media screen and (max-width: 600px) {
     .calc {
         width: 300px;
-        height: 360px;
+        height: 400px;
     }
 }
