@@ -14,7 +14,7 @@ class Calc {
                 previousNum.textContent = Number(previousNum.textContent) + Number(currNum.textContent);
                 currNum.textContent = '0';
             } else {
-                myCalc.operate(operateDisplay.textContent);
+                this.operate(operateDisplay.textContent);
                 operateDisplay.textContent = '+';
             }
         }
@@ -30,7 +30,7 @@ class Calc {
                 previousNum.textContent = Number(previousNum.textContent) - Number(currNum.textContent);
                 currNum.textContent = '0';
             } else {
-                myCalc.operate(operateDisplay.textContent);
+                this.operate(operateDisplay.textContent);
                 operateDisplay.textContent = '-';
             }
         }
@@ -50,7 +50,7 @@ class Calc {
                 previousNum.textContent = Number(previousNum.textContent) / Number(currNum.textContent);
                 currNum.textContent = '0';
             } else {
-                myCalc.operate(operateDisplay.textContent);
+                this.operate(operateDisplay.textContent);
                 operateDisplay.textContent = '÷';
             }
         }
@@ -66,7 +66,7 @@ class Calc {
                 previousNum.textContent = Number(previousNum.textContent) * Number(currNum.textContent);
                 currNum.textContent = '0';
             } else {
-                myCalc.operate(operateDisplay.textContent);
+                this.operate(operateDisplay.textContent);
                 operateDisplay.textContent = '*';
             }
         }
@@ -75,16 +75,16 @@ class Calc {
     operate(operator) {
         switch(operator) {
             case '+':
-                myCalc.add(currNum.textContent);
+                this.add(currNum.textContent);
                 break;
             case '-':
-                myCalc.subtract(currNum.textContent);
+                this.subtract(currNum.textContent);
                 break;
             case '÷':
-                myCalc.divide(currNum.textContent);
+                this.divide(currNum.textContent);
                 break;
             case '*':
-                myCalc.multiply(currNum.textContent);
+                this.multiply(currNum.textContent);
                 break;
         }
     }
@@ -105,7 +105,7 @@ class Calc {
 
     equals() {
         if (!operateDisplay.textContent) return;
-        myCalc.operate(operateDisplay.textContent);
+        this.operate(operateDisplay.textContent);
         currNum.textContent = previousNum.textContent;
         operateDisplay.textContent = '';
         previousNum.textContent = '';
